@@ -13,7 +13,7 @@ try {
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname  = path.dirname(__filename);
-const themeDir   = path.resolve(__dirname, 'cms/wp-content/themes/custom-theme');
+const themeDir   = path.resolve(__dirname, 'cms/wp-content/themes/jct-group');
 
 const isDev = process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'staging';
 
@@ -33,13 +33,13 @@ export default defineConfig({
    */
   base: isDev
     ? 'http://localhost:3000/'
-    : '/wp-content/themes/custom-theme/assets/dist/',
+    : '/wp-content/themes/jct-group/assets/dist/',
 
   plugins: [
     // Triggert Full-Page-Reload bei PHP-Änderungen (relativ zum CWD = Projekt-Root)
     liveReload([
-      'cms/wp-content/themes/custom-theme/**/*.php',
-      'cms/wp-content/themes/custom-theme/**/*.twig', // falls Twig verwendet wird
+      'cms/wp-content/themes/jct-group/**/*.php',
+      'cms/wp-content/themes/jct-group/**/*.twig', // falls Twig verwendet wird
     ]),
     ...(compression
       ? [
